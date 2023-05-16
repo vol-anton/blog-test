@@ -1,0 +1,29 @@
+
+<nav class="navbar bg-light shadow">
+  <div class="container-fluid">
+    <a href="/" class="navbar-brand text-secondary px-3">Blog test</a>
+
+    <div class="navbar">
+        {# <a href="{{path('app_register')}}" class="nav-item text-secondary text-decoration-none p-3">Register</a> #}
+        <a href="#" class="nav-item text-secondary text-decoration-none p-3">Register</a>
+        
+        {% if app.user %} 
+          <a href="#" class="nav-item text-secondary text-decoration-none p-3">Logout</a>
+          <a href="#" class="nav-item text-secondary text-decoration-none p-3">Profile</a>
+          <a href="#" class="nav-item text-secondary text-decoration-none p-3">Admin</a>
+        {% else %}
+          <a href="#" class="nav-item text-secondary text-decoration-none p-3">Login</a>
+        {% endif %}
+
+        <a href="#" class="nav-item text-secondary text-decoration-none p-3">Articles</a>
+        <a href="#" class="nav-item text-secondary text-decoration-none p-3">About</a>
+        <a href="#" class="nav-item text-secondary text-decoration-none p-3">Contact</a>
+
+        <form class="d-flex" role="search">
+        <input class="form-control me-2" type="search" placeholder="Rechercher un article" aria-label="Search">
+        <button class="btn" type="submit">&#x1F50D</button>
+        </form>
+    </div>
+
+  </div>
+</nav>
