@@ -14,12 +14,15 @@ use Doctrine\Persistence\ManagerRegistry;
  * @method Contacts[]    findAll()
  * @method Contacts[]    findBy(array $criteria, array $orderBy = null, $limit = null, $offset = null)
  */
+
 class ContactsRepository extends ServiceEntityRepository
 {
     public function __construct(ManagerRegistry $registry)
     {
         parent::__construct($registry, Contacts::class);
     }
+
+    // public function pour sauvegarder (save) le contact
 
     public function save(Contacts $entity, bool $flush = false): void
     {
@@ -30,6 +33,8 @@ class ContactsRepository extends ServiceEntityRepository
         }
     }
 
+    // public function pour supprimer (remove) le contact
+
     public function remove(Contacts $entity, bool $flush = false): void
     {
         $this->getEntityManager()->remove($entity);
@@ -38,6 +43,8 @@ class ContactsRepository extends ServiceEntityRepository
             $this->getEntityManager()->flush();
         }
     }
+
+}
 
 //    /**
 //     * @return Contacts[] Returns an array of Contacts objects
@@ -63,4 +70,4 @@ class ContactsRepository extends ServiceEntityRepository
 //            ->getOneOrNullResult()
 //        ;
 //    }
-}
+
